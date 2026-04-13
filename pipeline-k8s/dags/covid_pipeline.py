@@ -89,12 +89,12 @@ with DAG(
 
     extrai = PythonOperator(
         task_id="extrai_dados",
-        python_callable=extrai_dados,
+        python_callable=extract_data,
     )
 
     carrega = PythonOperator(
         task_id="carrega_postgres",
-        python_callable=carrega_postgres,
+        python_callable=load_postgres,
     )
 
     extrai >> carrega
