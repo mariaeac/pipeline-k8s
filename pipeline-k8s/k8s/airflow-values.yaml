@@ -1,0 +1,19 @@
+executor: KubernetesExecutor
+
+env: 
+  - name: AIRFLOW__CORE__LOAD_EXAMPLES
+    value: "false"
+
+postgresql:
+  enabled: false
+
+data:
+  metadataConnection:
+    user: airflow
+    pass: airflow123
+    host: postgres-service.dados.svc.cluster.local
+    port: 5432
+    db: pipeline
+    protocol: postgresql
+    
+
