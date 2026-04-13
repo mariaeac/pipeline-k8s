@@ -15,5 +15,17 @@ data:
     port: 5432
     db: pipeline
     protocol: postgresql
-    
 
+
+dags:
+  gitSync:
+    enabled: true
+    repo: https://github.com/mariaeac/pipeline-k8s
+    branch: main
+    subPath: pipeline-k8s/dags
+    period: 30s
+
+apiServer:
+  startupProbe:
+    failureThreshold: 30
+    periodSeconds: 10

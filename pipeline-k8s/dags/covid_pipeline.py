@@ -38,7 +38,7 @@ def extract_data(**context):
 def load_postgres(**context):
     dados = context["ti"].xcom_pull(key="dados_covid", task_ids="extrai_dados")
 
-        conn = psycopg2.connect(**DB_CONFIG)
+    conn = psycopg2.connect(**DB_CONFIG)
     cursor = conn.cursor()
 
     # Cria a tabela se não existir
